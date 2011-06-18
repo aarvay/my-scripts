@@ -1,0 +1,16 @@
+Welcome to My-Scripts Repo
+----------------------------
+
+INTRODUCTION :
+--------------
+
+This repository contains my experients. They are basically some small scripts that does some small job. Feel free to fork and improve!
+Use this Readme to get more knowledge about each scripts.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+1] The Result Fetcher (resultfetcher.php)
+
+This is a small script that I wrote to fetch the results of the Even Semester Exams of SASTRA University using CURL requests. Used Tamper Data to parse the postfields
+and fed it to the CURL. Simple.
