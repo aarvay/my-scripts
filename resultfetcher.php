@@ -19,5 +19,47 @@
   curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
   $string = curl_exec($ch);
   curl_close($ch);
-  
-?>
+
+/**
+ *	Adding parsing support for Results, to support JSON export
+ *	@author Ashwanth Kumar <ashwanth@ashwanthkumar.in>
+ *	@date 19/06/2011
+ **/ 
+	// Extract the contens out
+	preg_match("/<td>Reg No<\/td><td>(.+)<\/td>/",$string, $regMatch);
+	$registerNumber = $regMatch[1];
+	
+	preg_match("/<td>SGPA<\/td><td>(.*)<\/td>/",$string, $sgMatch);
+	$sgpaValue = $sgMatch[1];
+	
+	preg_match("/<td>CGPA<\/td><td>(.*)<\/td>/",$string, $cgMatch);
+	$cgpaValue = $cgMatch[1];
+	
+	preg_match("/<td>Result<\/td><td>(.+)<\/td>/",$string, $resMatch);
+	
+	$courseWiseGrades = (explode("  ",$resMatch[1]));
+	
+	$course = array();
+	
+	foreach($courseWiseGrades as $courseGrade) {
+		$course[] = explode(" ",$courseGrade);
+	}
+	
+	/** 
+	 *	A simple datastructure to export the results content
+	 **/
+	class Result {
+		public $registerNumber;
+		public $course;
+		public $sgpa;
+		public $cgpa;
+	}
+	
+	$result = new Result;
+	$result->registerNumber = $registerNumber;
+	$result->course = $course;
+	$result->sgpa = $sgpaValue;
+	$result->cgpa = $cgpaValue;
+
+	header("Content-type: application/json");
+	echo json_encode($result);
