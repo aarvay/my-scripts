@@ -1,10 +1,18 @@
 <?php
 /**
-*
-* DESC : A small script that fetches the even semester 2011 results (SASTRA University)
-* @author : Vignesh Rajagopalan
-*
-*
+      8O         ,`OL     8PPPPPPPPP88OYO.         dO  ,o. Yb     ,OF
+     dOOb        dP`Op    dO     ,oOP'  YO        ,OP ,OYO. Yb   ,OP
+    ,OP`Ob      dO' YO.   dO  ,oOP'      Yb       OP  OP YO. YO.,OP
+    dP  YO.    ,OP   YO.  d_oOP'          Yb     dP  dP   YO  Y,_P
+   dobooo8p    d8ooooo8p  dYOo._           Yb   dO  doooooo8o  dO
+  ,OP     Ob  dO'      Yb dO `"Ybo.         Ob dO' dO'      Yb dO
+  dP      `Ob,OP        ObdO     `YOo.      `O,O' ,O'        YbdO
+ dO'       YOdP         `OYO        'YP      `8P  OP          YYO
+ 
+DESC : A small script that fetches the even semester 2011 results (SASTRA University)
+@author : Vignesh Rajagopalan
+
+
 **/
     
   $regno = $_REQUEST['reg'];
